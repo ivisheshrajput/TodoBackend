@@ -18,3 +18,22 @@ exports.getAllTodo = async (req, res) => {
       });
   }
 };
+
+exports.getTodo = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const response = await Todo.findById({ _id: id });
+    res.status(200).json({
+      succcess: true,
+      data: response,
+      message: `Data fetched for ${id}`,
+    });
+  } catch (err) {
+    console.log(err),
+      res.status(500).json({
+        success: false,
+        data: "Internal Server Error",
+        message: "Server Error",
+      });
+  }
+};
