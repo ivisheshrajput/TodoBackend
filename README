@@ -6,3 +6,5 @@
 
 //For env local use
 // npm i dotenv
+//npm i cors
+//as if there is no cors then backend and frontend will give issue if you create by stingify

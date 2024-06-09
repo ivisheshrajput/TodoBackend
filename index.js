@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 // app.listen(3001, () => {
 //   console.log("App is running succesfully");
@@ -8,6 +9,7 @@ const app = express();
 require("dotenv").config();
 const PORT = process.env.PORT || 3700;
 
+app.use(cors());
 //middleware to parse json request body
 app.use(express.json());
 
